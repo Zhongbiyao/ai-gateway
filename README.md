@@ -17,12 +17,8 @@
 本项目旨在打造一个**企业级 AI 网关**，将多模型接入、路由调度、监控告警等横切关注点从业务代码中剥离。业务方只需对接一个 OpenAI 兼容接口，即可获得高可用、可观测、可优化的模型调用能力。
 
 ## 🎥 2. 演示与效果预览
+https://github.com/user-attachments/assets/926b07bf-9b0e-42ce-92a9-6a2f2f7d2b58
 
-> *(这里留给你插入视频和截图)*
-> * **📺 视频演示**：*(建议录制一段 2 分钟视频，展示：前端创建 API Key ➔ 发起对话请求 ➔ 观察流式响应 ➔ 在监控大盘查看指标)*
-> * **📸 界面截图**：
->   * *(图 1：API Key 管理页面，展示创建/撤销与调用统计)*
->   * *(图 2：Grafana 监控大盘，展示 QPS、成功率、延迟分布)*
 
 ## ✨ 3. 核心功能
 
@@ -158,3 +154,20 @@ client.chatStream("讲一个故事", new StreamCallback() { ... });
 | **成本预算与告警** | 支持按 API Key 设置月度预算，超阈值自动降级到低成本模型或告警。 |
 
 ---
+## 📁 10. 项目结构
+
+```text
+yu-ai-router/
+├── frontend/                # 前端项目 (Vue 3 + Vite)
+├── sql/                     # 数据库初始化脚本
+├── src/                     # Java 后端源码 (Spring Boot)
+│   ├── main/
+│   │   ├── java/            # 控制器、服务、适配器等核心代码
+│   │   └── resources/       # 配置文件 (application.yml 等)
+├── yu-ai-router-sdk/        # Java SDK 模块
+├── docker-compose.yml       # Docker 一键部署配置
+├── Dockerfile               # Java 后端 Dockerfile
+├── prometheus.yml           # Prometheus 配置
+├── grafana-dashboard.json   # Grafana 监控大盘配置
+├── arch.svg                 # 系统架构图
+└── README.md
