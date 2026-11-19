@@ -154,3 +154,20 @@ client.chatStream("讲一个故事", new StreamCallback() { ... });
 | **成本预算与告警** | 支持按 API Key 设置月度预算，超阈值自动降级到低成本模型或告警。 |
 
 ---
+## 📁 10. 项目结构
+
+```text
+yu-ai-router/
+├── frontend/                # 前端项目 (Vue 3 + Vite)
+├── sql/                     # 数据库初始化脚本
+├── src/                     # Java 后端源码 (Spring Boot)
+│   ├── main/
+│   │   ├── java/            # 控制器、服务、适配器等核心代码
+│   │   └── resources/       # 配置文件 (application.yml 等)
+├── yu-ai-router-sdk/        # Java SDK 模块
+├── docker-compose.yml       # Docker 一键部署配置
+├── Dockerfile               # Java 后端 Dockerfile
+├── prometheus.yml           # Prometheus 配置
+├── grafana-dashboard.json   # Grafana 监控大盘配置
+├── arch.svg                 # 系统架构图
+└── README.md
